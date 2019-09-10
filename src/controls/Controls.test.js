@@ -19,6 +19,14 @@ describe("<Controls />", () => {
         component.getByText(/lock gate/i);
         component.getByText(/close gate/i);
 
+    });
+    it('Shows unlock gate and open gate if locked and closed', ()=>{
+
+      const component = render(<Controls locked={true}
+        closed={true} />);
+        component.getByText(/unlock gate/i);
+        component.getByText(/open gate/i);
+
     })
 
     // it('wont open if locked', ()=>{
