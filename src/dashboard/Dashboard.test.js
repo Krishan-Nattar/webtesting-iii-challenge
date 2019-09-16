@@ -12,19 +12,17 @@ function renderWithRedux(
 ) {
   return {
     ...render(<Provider store={store}>{ui}</Provider>),
-    // adding `store` to the returned utilities to allow us
-    // to reference it in our tests (just try to avoid using
-    // this to test implementation details).
     store,
   }
 }
 
 describe("<Dashboard />", () => {
-  // it("matches snapshot", () => {
-  //   const tree = renderer.create(<Dashboard />);
+  it("matches snapshot", () => {
+    // const tree = renderer.create(<Dashboard />);
+    const tree = renderWithRedux(<Dashboard />);
 
-  //   expect(tree.toJSON()).toMatchSnapshot();
-  // });
+    expect(tree).toMatchSnapshot();
+  });
 
   it('Shows controls and display"', () => {
     const component = renderWithRedux(<Dashboard />);
