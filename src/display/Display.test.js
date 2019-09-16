@@ -26,15 +26,15 @@ describe("<Display />", () => {
     const component = render(<Display locked={true} closed={true} />);
     const locked = component.getByText(/locked/i);
     const closed = component.getByText(/closed/i);
-    expect(locked.classList.contains('red-led')).toBe(true);
-    expect(closed.classList.contains('red-led')).toBe(true);
+    expect(locked.classList.contains("red-led")).toBe(true);
+    expect(closed.classList.contains("red-led")).toBe(true);
   });
 
   it("When open and unlocked, display green-led class", () => {
     const component = render(<Display locked={false} closed={false} />);
     const unlocked = component.getByText(/unlocked/i);
     const open = component.getByText(/open/i);
-    expect(unlocked.classList.contains('green-led')).toBe(true);
-    expect(open.classList.contains('green-led')).toBe(true);
+    expect(unlocked.classList.contains("green-led")).toBe(true);
+    expect(open.classList.contains("green-led")).toBe(true);
   });
 });

@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 const Controls = props => {
+  // console.log(props);
   const { locked, closed, toggleLocked, toggleClosed } = props;
 
   return (
@@ -16,3 +18,5 @@ const Controls = props => {
 };
 
 export default Controls;
+
+// export default connect(null, {})(Controls);
