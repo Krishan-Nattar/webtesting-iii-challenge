@@ -24,6 +24,18 @@ describe("<Dashboard />", () => {
     expect(tree).toMatchSnapshot();
   });
 
+   it("buttons' text changes to reflect the state the door will be in if clicked", () => {
+
+    const component = renderWithRedux(<Dashboard />);
+    const button2 = component.getByText(/close gate/i);
+    fireEvent.click(button2);
+    component.getByText(/open gate/i);
+    const button1 = component.getByText(/lock gate/i);
+    fireEvent.click(button1);
+    component.getByText(/unlock gate/i);
+    
+  });
+
   it('Shows controls and display"', () => {
     const component = renderWithRedux(<Dashboard />);
     component.getByText(/unlocked/i);

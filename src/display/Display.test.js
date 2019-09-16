@@ -10,6 +10,9 @@ describe("<Display />", () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  
+
+
   it("renders locked and closed when props passed are locked=true and closed=true", () => {
     const component = render(<Display locked={true} closed={true} />);
     component.getByText(/locked/i);

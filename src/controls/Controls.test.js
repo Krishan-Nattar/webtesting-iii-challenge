@@ -11,6 +11,8 @@ describe("<Controls />", () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+ 
+
   it("Shows both buttons", () => {
     const component = render(<Controls />);
     component.getByText(/lock gate/i);
