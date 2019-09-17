@@ -2,6 +2,8 @@ import React from 'react';
 
 import Display from '../display/Display';
 import Controls from '../controls/Controls';
+// import { connect } from 'net';
+import {connect} from 'react-redux';
 
 class Dashboard extends React.Component {
   state = {
@@ -34,4 +36,6 @@ class Dashboard extends React.Component {
   };
 }
 
-export default Dashboard;
+// export default Dashboard;
+
+export default connect(null, {})(Dashboard);
